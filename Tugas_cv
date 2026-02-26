@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Lengkap</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .biodata-card {
+            background-color: #ffffff;
+            width: 400px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .header {
+            background: linear-gradient(red,blue);
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .photo-container {
+            margin: -15px auto 15px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 5px solid white;
+            background-color: #ddd;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1px;
+        }
+
+        .job-title {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .details {
+            text-align: left;
+            padding: 0 30px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .label {
+            font-weight: 600;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .value {
+            color: #333;
+            font-size: 14px;
+            text-align: right;
+            max-width: 60%;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="biodata-card">
+        <div class="header">Biodata Lengkap</div>
+        
+        <div class="photo-container">
+            <img src="data:image/png;base64,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" alt="Foto dari Internet">
+        </div>
+
+        <div class="name">Rizqi Fadilah</div>
+        <div class="job-title">Mahasiswa</div>
+
+        <div class="details">
+            <div class="detail-row">
+                <span class="label">Tempat, Tanggal Lahir</span>
+                <span class="value">Bekasi, 23 Maret 2005</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Jenis Kelamin</span>
+                <span class="value">Laki-Laki</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Agama</span>
+                <span class="value">Islam</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Alamat</span>
+                <span class="value">Jl. Mawar No. 79, Jatimekar, Jatiasih, Kota Bekasi</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Status Perkawinan</span>
+                <span class="value">Belum Menikah</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Kewarganegaraan</span>
+                <span class="value">Indonesia (WNI)</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">No. Telepon</span>
+                <span class="value">0896-7111-6099</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Email</span>
+                <span class="value">rizqifdl216@gmailcom</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            &copy; 2025 Biodata Pribadi
+        </div>
+    </div>
+
+</body>
